@@ -1,0 +1,114 @@
+<div class="offer__box">
+  <button
+    (click)="scrollToContactForm()"
+    class="pure-button btn-primary w-100 btn-lg mb-2 contact-btn"
+  >
+    {{ 'product_details.b_call_now' | translate }}
+  </button>
+
+  <div class="raised-border p-4 card">
+    <div *ngIf="conditionCredit && priceType">
+      <h3>{{ 'offer_box.l_financing' | translate }}</h3>
+      <p class="text-primary p2 bold">
+        <span class="price">
+          <ng-container *ngIf="priceType === 2; else creditGross">
+            {{ conditionCredit.RateNet }}€
+          </ng-container>
+          <ng-template #creditGross>
+            {{ conditionCredit.RateGross }}€
+          </ng-template>
+        </span>
+        {{ 'offer_box.l_each_month' | translate }}
+      </p>
+      <p class="p3 text-secondary">
+        {{ priceType === 2 ? 'inkl. ' + vatRate : 'zzgl. ' + vatRate }}% MwSt.
+        {{ conditionCredit.Months }} Monate Laufzeit
+      </p>
+    </div>
+
+    <div
+      *ngIf="conditionLeasing && conditionCredit"
+      class="offer__box-separator"
+    >
+      <div class="spacer"></div>
+      <span class="p3">oder</span>
+      <div class="spacer"></div>
+    </div>
+
+    <div *ngIf="conditionLeasing && priceType">
+      <h3>{{ 'offer_box.l_leasing' | translate }}</h3>
+      <p class="text-primary p2 bold">
+        <span class="price">
+          <ng-container *ngIf="priceType === 2; else leasingGross">
+            {{ conditionLeasing.RateNet }}€
+          </ng-container>
+          <ng-template #leasingGross>
+            {{ conditionLeasing.RateGross }}€
+          </ng-template>
+        </span>
+
+        {{ 'offer_box.l_each_month' | translate }}
+      </p>
+      <p class="p3 text-secondary">
+        {{ priceType === 2 ? 'inkl. ' + vatRate : 'zzgl. ' + vatRate }}% MwSt.
+        {{ conditionLeasing.Months }} Monate Laufzeit
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <div
+      class="d-flex justify-content-between align-items-center mx-4"
+      style="border-bottom: 1px solid #ddd;"
+    >
+      <p>{{ 'offer_box.l_price' | translate }}</p>
+      <!-- retail price net -->
+
+      <ng-container *ngIf="priceType === 1; else retailPriceElse">
+        <p>{{ vehicle?.RetailPriceGross | number: '1.2-2' }}€</p>
+      </ng-container>
+      <ng-template #retailPriceElse>
+        <p>{{ vehicle?.RetailPriceNet | number: '1.2-2' }}€</p>
+      </ng-template>
+    </div>
+    <div
+      class="d-flex justify-content-between align-items-center mx-4"
+      style="border-bottom: 1px solid #ddd;"
+    >
+      <p class="bold">{{ 'offer_box.l_saving' | translate }}</p>
+      <!--  SavingNet -->
+
+      <ng-container *ngIf="priceType === 1; else savingElse">
+        <p>{{ vehicle?.SavingGross | number: '1.2-2' }}€</p>
+      </ng-container>
+      <ng-template #savingElse>
+        <p>{{ vehicle?.SavingNet | number: '1.2-2' }}€</p>
+      </ng-template>
+    </div>
+    <div
+      class="d-flex justify-content-between align-items-center mx-4"
+      style="border-bottom: 1px solid #ddd;"
+    >
+      <p>{{ 'offer_box.l_house_price' | translate }}</p>
+
+      <!-- price gross price net -->
+      <ng-container *ngIf="priceType === 1; else priceElse">
+        <p>{{ vehicle?.PriceGross | number: '1.2-2' }}€</p>
+      </ng-container>
+      <ng-template #priceElse>
+        <p>{{ vehicle?.PriceNet | number: '1.2-2' }}€</p>
+      </ng-template>
+    </div>
+    <div
+      class="d-flex justify-content-center align-items-center mt-2 shipping-text"
+    >
+      <svg-icon
+        src="assets/icons/svg/home.svg"
+        class="cursor-pointer mr-2"
+      ></svg-icon>
+      <p class="bold p2">
+        {{ 'offer_box.l_shipping' | translate }}
+      </p>
+    </div>
+  </div>
+</div>

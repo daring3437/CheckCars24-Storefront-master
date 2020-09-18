@@ -1,0 +1,9 @@
+p {
+  margin: 0;
+}
+.item {
+  flex-basis: 50%;
+  @media (max-width: 576px) {
+    flex-basis: 100%;
+  }
+}

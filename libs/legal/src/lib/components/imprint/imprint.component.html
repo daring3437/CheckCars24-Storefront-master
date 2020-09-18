@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="d-flex flex-wrap">
+      <div class="d-flex align-items-center item" *ngFor="let ip of imprint">
+        <svg-icon
+          [src]="'assets/icons/svg/' + ip.icon + '.svg'"
+          class="header__action-icon cursor-pointer"
+        ></svg-icon>
+        <div class="ml-4">
+          <h2 class="mt-3 mb-3">{{ ip.header }}</h2>
+          <div>
+            <p *ngFor="let paragraph of ip.paragraphs">
+              {{ paragraph }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

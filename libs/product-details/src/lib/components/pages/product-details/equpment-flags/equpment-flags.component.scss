@@ -1,0 +1,7 @@
+.equipment {
+  list-style: disc;
+  columns: 2;
+  @media (max-width: 596px) {
+    columns: 1;
+  }
+}

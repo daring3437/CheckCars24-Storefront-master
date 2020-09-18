@@ -1,0 +1,8 @@
+.info-conatiner {
+  p {
+    flex-basis: 65%;
+    &:last-child {
+      flex-basis: 35%;
+    }
+  }
+}

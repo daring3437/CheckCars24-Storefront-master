@@ -1,0 +1,56 @@
+{
+  "product_details": {
+    "b_call_now": "Jetzt Anfragen",
+    "l_contact_title": "Fahrzeug Jetzt Anfragen!",
+    "l_emission": "            Weitere Informationen zum offiziellen Kraftstoffverbrauch und den\n            offiziellen spezifischen CO2-Emissionen neuer Personenkraftwagen\n            können dem „Leitfaden über den Kraftstoffverbrauch, die\n            CO2-Emissionen und den Stromverbrauch neuer Personenkraftwagen“\n            entnommen werden, der an allen Verkaufsstellen und bei der Deutsche\n            Automobil Treuhand GmbH (DAT), Hellmuth-Hirth-Straße 1, 73760\n            Ostfildern-Scharnhausen bzw. im Internet unter Leitfaden\n            Kraftstoffverbrauch unentgeltlich erhältlich ist.",
+    "l_prepay": "*Auch ohne Anzahlung (Finanzierung) oder Sonderzahlung (Leasing)\n            möglich",
+    "l_static_text": "** Weitere Informationen zum offiziellen Kraftstoffverbrauch und den offiziellen spezifischen CO2 -Emissionen neuer Personenkraftwagen können dem Leitfaden über den Kraftstoffverbrauch, die CO2 -Emissionen und den Stromverbrauch neuer Personenkraftwagen entnommen werden, der an allen Verkaufsstellen und bei der Deutschen Automobil Treuhand GmbH unter  www.dat.de unentgeltlich erhältlich ist.",
+    "l_click": "G click here"
+  },
+  "offer_box": {
+    "l_leasing": "Leasing",
+    "l_each_month": "pro Monat",
+    "l_financing": "Finanzierung",
+    "l_retail_price": "UVP",
+    "l_saving_net": "Preisvorteil",
+    "l_price": "UVP",
+    "l_saving": "Preisvorteil",
+    "l_house_price": "Hauspreis",
+    "l_shipping": "Haustürlieferung oder Lagerabholung"
+  },
+  "basic_info": {
+    "title_vehicle_details": "Fahrzeugdetails",
+    "l_new": "New",
+    "l_kind": "Zustand",
+    "l_exterior_color": "Außenfarbe",
+    "l_manufacturer": "Marke",
+    "l_bodytypetag": "Fahrzeugtyp",
+    "l_model": "Modell",
+    "l_transmission_type": "Getriebe",
+    "l_modal_year": "Jahr",
+    "l_door_count": "Anzahl Türen",
+    "l_engine_displacement": "Hubraum",
+    "l_fueltype": "Kraftstoff",
+    "l_engine_power": "Leistung",
+    "l_horese_power": "PS",
+    "l_kilowatt": "Kwh"
+  },
+  "equipment_flags": {
+    "l_vehicle_information": "Fahrzeugbeschreibung",
+    "l_furnishing": "AUSSTATTUNG"
+  },
+  "contact_form": {
+    "l_leasing": "Leasing",
+    "l_financial": "Finanzierung",
+    "l_name": "Vor- und Nachname",
+    "l_phone": "Telephone",
+    "l_email": "Email",
+    "l_postal_code": "PLZ / Ort",
+    "l_calling_time": "Zeit für Anrufe",
+    "l_please_select": "Please select",
+    "l_accept_terms": "Hiermit akzeptiere ich die von mir zur Kenntniss genommene",
+    "l_inquery": "Unverbindlich Anfragen",
+    "l_submit_success": "Thank you for you interest. Your request have been sent! We will get back\r\n      with you soon.",
+    "l_submit_fail": "An error ha occured please call us!"
+  }
+}

@@ -1,0 +1,105 @@
+<div class="home__page">
+  <div style="height: 500px;">
+    <div style="background-color: #484c5b; height: 300px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-5">
+            <checkcars-search-box></checkcars-search-box>
+          </div>
+          <div class="col-md-6 col-lg-7 d-none d-md-block">
+            <div>
+              <h1 style="color: white;">{{ 'title' | translate }}</h1>
+              <img
+                class="d-none d-lg-block w-100 car-img"
+                src="/assets/images/landingcar.png"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <checkcars-car-categories
+    (categorySearch)="searchForCategory($event)"
+    [categories]="categories"
+  ></checkcars-car-categories>
+
+  <ng-container *ngIf="lastViewedVehicle$ | async as lastViewed">
+    <div class="container mt-5" *ngIf="lastViewed.length > 0">
+      <h2>
+        {{ 'last_viewed' | translate }}
+      </h2>
+      <div class="row">
+        <div class="col-12">
+          <checkcars-car-carousel
+            [favourites]="favorites"
+            [vehicles]="lastViewed"
+          ></checkcars-car-carousel>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="premiumVehicles$ | async as premiumVehicles">
+    <div
+      *ngIf="premiumVehicles.length !== 0"
+      style="background-color: #f4f4f6;"
+    >
+      <div class="container mt-5 pt-4">
+        <h2>
+          {{ 'premium' | translate }}
+        </h2>
+        <div class="row">
+          <div class="col-12">
+            <checkcars-car-carousel
+              [favourites]="favorites"
+              [vehicles]="premiumVehicles"
+            ></checkcars-car-carousel>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div
+        class="col-12 col-sm text-center feature"
+        *ngFor="let feature of features"
+      >
+        <span class="text-center feature__icon">
+          <svg-icon
+            [src]="'assets/icons/svg/' + feature.src"
+            class="header__action-icon"
+          ></svg-icon>
+        </span>
+        <p class="icon-text text-center bold p3">
+          {{ feature.name }}
+        </p>
+      </div>
+    </div>
+    <checkcars-delivery-information></checkcars-delivery-information>
+    <div class="row">
+      <div class="col-12">
+        <checkcars-car-brands></checkcars-car-brands>
+      </div>
+    </div>
+
+    <checkcars-service-information></checkcars-service-information>
+  </div>
+
+  <div style="background-color: #f4f4f6;">
+    <div class="container mt-5">
+      <div class="row p5">
+        <div class="col-12">
+          <h2>
+            {{ 'premium_selection' | translate }}
+          </h2>
+        </div>
+        <div class="col-12">
+          <checkcars-reviews></checkcars-reviews>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

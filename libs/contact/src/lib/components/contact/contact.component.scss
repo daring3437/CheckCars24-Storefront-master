@@ -1,0 +1,36 @@
+@import 'variables';
+.raised-b {
+  border: 1px solid $border-color;
+  box-shadow: 0 0 1px $border-color inset;
+  box-sizing: border-box;
+}
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  input[type*='text'] {
+    @extend .raised-b;
+    height: 40px;
+  }
+  input[type*='email'] {
+    @extend .raised-b;
+    height: 40px;
+  }
+  .form-control {
+    margin: 5px 0px;
+    flex-basis: 100%;
+  }
+}
+.submitted {
+  border-radius: 4px;
+  padding: 15px;
+  margin-top: 15px;
+  &-error {
+    @extend .submitted;
+    background-color: #f75e5e;
+  }
+  &-success {
+    @extend .submitted;
+    background-color: #e1f2da;
+  }
+}

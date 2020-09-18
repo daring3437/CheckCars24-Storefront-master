@@ -1,0 +1,22 @@
+<div class="sws-collapse">
+  <div
+    class="sws-collapse__header"
+    (click)="collapsed = !collapsed"
+    [attr.aria-expanded]="!collapsed"
+    aria-controls="collapseBasic"
+  >
+    <ng-container [ngTemplateOutlet]="headerTemplateRef"></ng-container>
+    <ng-container *ngIf="collapsed; else openTemplate">
+      <svg-icon src="assets/icons/svg/arrow-right.svg" class="cursor-pointer">
+      </svg-icon>
+    </ng-container>
+    <ng-template #openTemplate>
+      <svg-icon src="assets/icons/svg/arrow-down2.svg" class="cursor-pointer">
+      </svg-icon>
+    </ng-template>
+  </div>
+
+  <div class="sws-collapse__body" [collapse]="collapsed" [isAnimated]="true">
+    <ng-container [ngTemplateOutlet]="bodyTemplateRef"></ng-container>
+  </div>
+</div>

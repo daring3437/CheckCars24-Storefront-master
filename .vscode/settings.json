@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/782f5dc4-d318-4907-bb4e-ef6723940466/resourceGroups/Cc24-default-Rg/providers/Microsoft.Web/sites/cc24-storefront",
+  "appService.deploySubpath": "dist/check-cars-shop/browser"
+}

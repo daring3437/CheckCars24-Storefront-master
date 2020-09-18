@@ -1,0 +1,53 @@
+Home Page:
+    -searchService for the searchbox
+    -shared reducers for taking private - business chage 
+
+
+    Assets:
+        ☐ Brand names 
+        ☐ Images
+        ✔ Category icons @done(20-07-28 19:02)
+    
+    Features:
+    ✔ Image viewer vehicle details @done(20-08-25 19:51)
+    ✔ Last Viewed functionality @done(20-08-25 19:51)
+    ✔ Which value should I show as price on product card @done(20-08-27 11:48)
+    ☐ Customer Feedback
+    ☐ Premium vehicle carousel
+    ☐ Bullet points should work with translations
+    Missing Filters:
+    ✔ Transmission Type @done(20-08-07 12:26)
+    ✔ Type is missing data @done(20-08-07 12:26)
+    ✔ Engine power kw and ps @done(20-08-07 12:26)
+
+    Improvements:
+    ✔ Wait for it to be stable Remove ng5 slider -> https://github.com/m0t0r/ngx-slider @done(20-08-18 11:41)
+
+    Ideas:
+    ☐ Favourite items should be tracked and later be used for email marketing purposes
+
+
+    Fixes/Updates:
+    
+    Details:    
+    ✔ Vehicle details align left side @done(20-08-25 20:38)
+    ✔ Static disclamer on every page with link in the back "click here" @done(20-08-25 20:31)
+    ✘ Arrow shadow to make it visible<--- problematic @cancelled(20-08-27 10:06)
+    ✔ Bulletpoints missing <---- backend related @done(20-08-27 10:06)
+    ✔ Does months change as well with the change of financial conditaion @done(20-08-27 11:43)
+    
+    
+    
+    
+    Search page:
+    ✔ Static disclamer on every page with link in the back "click here" @done(20-08-25 20:31)
+    
+    ✔ search box manufacturer please select in url @done(20-08-28 09:02)
+
+    ✔ Mehr Filter? button TopDealScore 99-1 @done(20-08-28 11:33)
+    
+    
+    ☐ param something in url search page
+    
+    fro later:
+    Translationfile for favourite

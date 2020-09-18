@@ -1,0 +1,137 @@
+<section>
+  <div class="search__header" *ngIf="count !== null">
+    <div class="container">
+      <h1 style="font-weight: 400;">
+        {{ 'search.title_1' | translate }}
+        <span class="bold">
+          {{ count }}
+        </span>
+        {{ 'search.title_2' | translate }}
+      </h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="d-flex justify-content-between my-3">
+      <div>
+        <div class="filters">
+          <!--     <p
+            class="chip"
+            *ngFor="let mf of searchBarComponent.selectedManufactures"
+          >
+            {{ mf.Key }}
+            <svg-icon
+              [svgStyle]="{
+                'width.px': 25,
+                'height.px': 25,
+                'padding-top.px': 4
+              }"
+              src="assets/icons/svg/delete.svg"
+              class="cursor-pointer"
+              (click)="removeFilter(mf.Key)"
+            >
+            </svg-icon>
+          </p> -->
+        </div>
+      </div>
+
+      <div>
+        <div class="filter__actions d-lg-none d-flex">
+          <button (click)="opentFilter()" class="pure-button btn-primary m-2">
+            {{ 'search.l_filters' | translate }}
+          </button>
+          <button (click)="opentFilter()" class="pure-button btn-primary m-2">
+            {{ 'search.l_sort' | translate }}
+          </button>
+        </div>
+        <select
+          [formControl]="sortControl"
+          class="d-none d-lg-block sort-select raised-border"
+        >
+          <option selected value="topDealScore desc">{{
+            'search.l_best_offer' | translate
+          }}</option>
+          <option value="priceGross asc">{{
+            'serach.l_price_asc' | translate
+          }}</option>
+          <option value="priceGross desc">{{
+            'search.l_price_desc' | translate
+          }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-3 d-none d-lg-block">
+        <checkcars-search-bar
+          [routerAndParam]="routerAndParam"
+          (filterChange)="filterChange($event)"
+          [parameters]="parameters"
+        ></checkcars-search-bar>
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="row" style="min-height: 657px;">
+          <div
+            class="col-12 col-sm-6 col-md-4 mb-3"
+            *ngFor="
+              let vehicle of vehicles
+                | paginate
+                  : {
+                      itemsPerPage: top,
+                      currentPage:
+                        queryParams.skip === 0
+                          ? 1
+                          : (queryParams.skip + top) / top,
+                      totalItems: count
+                    }
+            "
+          >
+            <checkcars-product-card
+              [favorites]="favoriteVehicles"
+              [priceType]="priceType"
+              [product]="vehicle"
+            >
+            </checkcars-product-card>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <pagination-controls
+            (pageChange)="pageChange($event)"
+          ></pagination-controls>
+        </div>
+      </div>
+    </div>
+    <checkcars-delivery-information></checkcars-delivery-information>
+    <checkcars-service-information></checkcars-service-information>
+    <div class="row">
+      <div class="col-12 disclamer">
+        <p class="p4">
+          {{ 'product_details.l_static_text' | translate }}
+        </p>
+        <a class="text-primary p4">{{
+          'product_details.l_click' | translate
+        }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Mobilesidebar -->
+
+<p-sidebar [(visible)]="showSidebar" [showCloseIcon]="false">
+  <div class="filter__header">
+    <div class="cursor-pointer" (click)="showSidebar = false">
+      <svg-icon
+        src="assets/icons/svg/arrow-left.svg"
+        class="header__action-icon cursor-pointer"
+      ></svg-icon>
+      <span class="p1 bold">
+        {{ 'search.l_filters' | translate }}
+      </span>
+    </div>
+  </div>
+  <checkcars-search-bar
+    [routerAndParam]="routerAndParam"
+    (filterChange)="filterChange($event)"
+    [parameters]="parameters"
+  ></checkcars-search-bar>
+</p-sidebar>

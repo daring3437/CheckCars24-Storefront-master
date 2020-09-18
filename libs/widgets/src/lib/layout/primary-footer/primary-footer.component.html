@@ -1,0 +1,73 @@
+<footer>
+  <div class="container h-100">
+    <div class="row align-items-center h-100">
+      <div class="col-sm-12 col-md-4 py-3">
+        <img class="logo" src="/assets/images/check-logo-colorful.png" />
+        <p class="p3">
+          {{ 'primary_footer.l_copyright' | translate }}
+        </p>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <div class="row my-2">
+          <div class="col-sm-12 col-md-4">
+            <a class="nav-link p2 my-3">{{
+              'primary_footer.l_our_partners' | translate
+            }}</a>
+          </div>
+          <div class="col-sm-12 col-md-4">
+            <a routerLink="/legal/privacy" class="nav-link p2 my-3">{{
+              'primary_footer.l_data_protection' | translate
+            }}</a>
+          </div>
+          <div class="col-sm-12 col-md-4">
+            <a class="nav-link p2 my-3">{{
+              'primary_footer.l_financing' | translate
+            }}</a>
+          </div>
+        </div>
+
+        <div class="row my-2">
+          <div class="col-sm-12 col-md-4">
+            <a routerLink="/legal/imprint" class="nav-link p2 my-3">{{
+              'primary_footer.l_imprint' | translate
+            }}</a>
+          </div>
+          <div class="col-sm-12 col-md-4">
+            <a routerLink="/contact" class="nav-link p2 my-3">{{
+              'primary_footer.l_contact' | translate
+            }}</a>
+          </div>
+          <div class="col-md-4" *ngIf="false">
+            <select
+              [(ngModel)]="selectedLanguage"
+              class="w-100 raised-border language-selector"
+              (change)="languageChange()"
+            >
+              <option
+                [value]="lang.iso"
+                *ngFor="let lang of translationsArray"
+                >{{ lang.label }}</option
+              >
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-2">
+        <a class="icon__wrap" href="">
+          <svg-icon
+            src="assets/icons/svg/facebook.svg"
+            class="social-icon cursor-pointer"
+          ></svg-icon>
+        </a>
+        <a class="icon__wrap" href="">
+          <svg-icon
+            src="assets/icons/svg/instagram.svg"
+            class="social-icon cursor-pointer ig-button"
+          ></svg-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+  <p class="meta-info" *ngIf="type !== 'prod'">{{ type }}:{{ version }}</p>
+</footer>

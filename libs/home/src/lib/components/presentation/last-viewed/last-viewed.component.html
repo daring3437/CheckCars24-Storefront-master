@@ -1,0 +1,35 @@
+<!-- <ngu-carousel
+  #myCarousel
+  [inputs]="carouselTile"
+  (carouselLoad)="carouselTileLoad($event)"
+  [dataSource]="premiumCars"
+>
+  <ngu-tile *nguCarouselDef="let item; let i = index">
+    <checkcars-product-card [product]="item"></checkcars-product-card>
+  </ngu-tile>
+
+  <button
+    NguCarouselPrev
+    class="leftRs"
+    [style.opacity]="myCarousel.isFirst ? 0.5 : 1"
+  >
+    <svg-icon src="assets/icons/svg/arrow-left-long.svg"></svg-icon>
+  </button>
+
+  <button
+    NguCarouselNext
+    class="rightRs"
+    [style.opacity]="myCarousel.isLast ? 0.5 : 1"
+  >
+    <svg-icon src="assets/icons/svg/arrow-right-long.svg"></svg-icon>
+  </button>
+
+  <ul class="myPoint" NguCarouselPoint>
+    <li
+      *ngFor="let ia of myCarousel.pointNumbers; let i = index"
+      [class.active]="ia == myCarousel.activePoint"
+      (click)="myCarousel.moveTo(ia)"
+    ></li>
+  </ul>
+</ngu-carousel>
+ -->

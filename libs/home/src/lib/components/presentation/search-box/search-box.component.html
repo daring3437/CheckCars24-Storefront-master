@@ -1,0 +1,59 @@
+<div class="card p-4">
+  <div class="card__body">
+    <form action="" class="pure-form" [formGroup]="searchForm">
+      <div class="select__container my-2">
+        <select class="raised-border" formControlName="manufacturerName">
+          <option selected disabled [value]="null">{{
+            'search_box.pls_select' | translate
+          }}</option>
+          <option *ngFor="let params of parameters" [value]="params">{{
+            params
+          }}</option>
+        </select>
+
+        <select class="raised-border" formControlName="modell">
+          <option selected [value]="null">{{
+            'search_box.pls_select' | translate
+          }}</option>
+          <option *ngFor="let m of modell" [value]="m">{{ m }}</option>
+        </select>
+      </div>
+
+      <div class="btngroup__container my-2 p-1">
+        <button
+          [ngClass]="{ 'btn-select--active': selectedType === 'Finanzierung' }"
+          (click)="setType('Finanzierung')"
+          class="pure-button btn-select"
+        >
+          {{ 'search_box.b_financing' | translate }}
+        </button>
+        <button
+          [ngClass]="{ 'btn-select--active': selectedType === 'Leasing' }"
+          (click)="setType('Leasing')"
+          class="pure-button btn-select"
+        >
+          {{ 'search_box.b_leasing' | translate }}
+        </button>
+      </div>
+      <div class="slider__container my-4">
+        <ng-container *ngIf="!serverSide">
+          <ngx-slider
+            class="checkcars-slider"
+            [(value)]="minValue"
+            [(highValue)]="maxValue"
+            [options]="options"
+          ></ngx-slider>
+        </ng-container>
+      </div>
+    </form>
+  </div>
+  <div class="card__footer">
+    <button (click)="search()" class="pure-button btn-primary w-100">
+      {{ 'search_box.search' | translate }}
+    </button>
+    <p class="navigation">
+      <span class="p3">{{ 'search_box.l_more_filter' | translate }} </span>
+      <a class="p3 text-primary" routerLink="/search">Zur Detailsuche</a>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,112 @@
+@import 'theme';
+section {
+  border-radius: 4px;
+}
+.collapse {
+  padding: 20px 20px;
+  box-sizing: border-box;
+  &__header {
+    display: flex;
+    padding: 10px 0px;
+    justify-content: space-between;
+  }
+  &__collapse-body {
+  }
+}
+
+::ng-deep .sws-collapse {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.ck-button {
+  height: fit-content;
+  flex-basis: 47%;
+  background-color: #eeeff2;
+  border-radius: 4px;
+  overflow: auto;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.ck-button label {
+  float: left;
+  width: 100%;
+}
+
+.ck-button label span {
+  text-align: center;
+  padding: 3px 0px;
+  display: block;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+.ck-button label input {
+  visibility: hidden;
+  position: absolute;
+  top: -20px;
+}
+
+.ck-button input:hover + span {
+  background-color: #efe0e0;
+}
+
+/* .ck-button input:checked + span {
+    background-color: $primary-color;
+    color: #fff;
+  } */
+
+/* .ck-button input:checked:hover + span {
+  background-color: $primary-color;
+  color: #fff;
+} */
+
+//Custom chk
+/* The chk-container */
+.chk-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.chk-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.remove-icon {
+  position: absolute;
+  right: 0;
+  top: -2px;
+}
+.resp-img {
+  object-fit: cover;
+  width: 25px;
+  height: auto;
+}

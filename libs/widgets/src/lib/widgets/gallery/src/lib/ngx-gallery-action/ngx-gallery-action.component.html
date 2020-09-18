@@ -1,0 +1,19 @@
+<div
+  class="ngx-gallery-icon"
+  [class.ngx-gallery-icon-disabled]="disabled"
+  aria-hidden="true"
+  title="{{ titleText }}"
+  (click)="handleClick($event)"
+>
+  <i class="ngx-gallery-icon-content {{ icon }}">
+    <svg-icon
+      [svgStyle]="{
+        'width.px': 40,
+        'height.px': 40,
+        fill: 'rgb(255,255,255)'
+      }"
+      src="assets/icons/svg/delete.svg"
+      class="cursor-pointer"
+    ></svg-icon
+  ></i>
+</div>

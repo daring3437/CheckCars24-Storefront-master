@@ -1,0 +1,181 @@
+<div class="deatils__header">
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-12 h-100">
+        <div class="vehicle h-100">
+          <div class="vehicle__icon">
+            <img
+              [src]="manufacturer?.icon"
+              [alt]="manufacturer?.value + 'logo'"
+            />
+          </div>
+          <div class="vehicle__info ml-3">
+            <ng-container
+              *ngIf="
+                (vehicle?.Meta)[0].Title !== null &&
+                  (vehicle?.Meta)[0].Title !== '';
+                else generateTitle
+              "
+            >
+              <h2 class="mb-0 mt-0">
+                {{ (vehicle?.Meta)[0].Title }}
+              </h2>
+            </ng-container>
+            <ng-template #generateTitle>
+              <h2 class="mb-0 mt-0">
+                {{ vehicle?.ManufacturerName }} {{ vehicle?.Model }}
+              </h2>
+            </ng-template>
+
+            <h2 class="m-0"></h2>
+            <h3>{{ (vehicle?.Meta)[0].Description }}</h3>
+            <span
+              class="vehicle__info-chip mr-1"
+              *ngFor="let bullet of (vehicle?.BulletPoints)[0].BulletPoints"
+              >{{ bullet.Label }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      <div>
+        <ngx-gallery
+          [options]="galleryOptions"
+          [images]="galleryImages"
+        ></ngx-gallery>
+      </div>
+
+      <div class="row d-block d-lg-none my-2">
+        <div class="col-12">
+          <checkcars-offer-box
+            [vatRate]="vatRate"
+            (scrollToContact)="scrollToContactForm()"
+            [priceType]="priceType"
+            [vehicle]="vehicle"
+          ></checkcars-offer-box>
+          <div class="my-2">
+            <button
+              class="pure-button btn-primary-outline w-100 mb-2 d-flex justify-content-center align-items-center btn-lg"
+            >
+              <svg-icon
+                src="assets/icons/svg/phone.svg"
+                class="phone-icon cursor-pointer"
+              ></svg-icon>
+
+              +49 33 39393939
+            </button>
+            <button class="pure-button btn-primary w-100 btn-lg">
+              {{ 'product_details.b_call_now' | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <checkcars-basic-info [vehicle]="vehicle"></checkcars-basic-info>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="row">
+        <div class="col-12">
+          <checkcars-equpment-flags
+            [vehicle]="vehicle"
+          ></checkcars-equpment-flags>
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <p class="p2 bold">Kraftstoffverbrauch:</p>
+          <p>
+            {{ vehicle?.Consumption.ConsumptionTotal }} l/100km (kombiniert)
+          </p>
+          <p>{{ vehicle?.Consumption.ConsumptionCity }} l/100km (innerorts)</p>
+          <p>
+            {{ vehicle?.Consumption.ConsumptionOutskirts }} l/100km (außerorts)
+          </p>
+          <p>CO2-Emissionen: {{ vehicle?.Consumption.Co2Emission }} g/km</p>
+
+          <p class="p2 bold">Euronorm: {{ vehicle?.EuronormTag }}</p>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <p class="p2 bold">Energieeffizienzklasse:</p>
+          <img
+            *ngIf="vehicle?.Consumption.Co2Efficiency"
+            style="width: 288px;"
+            class="h-auto"
+            [src]="
+              'assets/images/coemission/co2-' +
+              vehicle?.Consumption.Co2Efficiency +
+              '.png'
+            "
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div class="spacer"></div>
+      <div class="row">
+        <div class="col-12">
+          <p class="bold p2">
+            {{ 'product_details.l_prepay' | translate }}
+          </p>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div class="row">
+        <div class="col-12">
+          {{ vehicle?.Terms }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 disclamer">
+          <p class="p4">
+            {{ 'product_details.l_static_text' | translate }}
+          </p>
+          <a class="text-primary p4">{{
+            'product_details.l_click' | translate
+          }}</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 p-4">
+          <img
+            class="w-100 h-auto"
+            src="assets/images/ratings.png"
+            alt="ratings"
+          />
+        </div>
+      </div>
+      <a id="contactForm" href="#contactForm"></a>
+      <div class="row">
+        <div style="background-color: #f4f4f6;" class="col-12 p-5">
+          <h2>{{ 'product_details.l_contact_title' | translate }}</h2>
+          <checkcars-contact-form
+            (sendOfferRequest)="sendOfferRequest($event)"
+          ></checkcars-contact-form>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-none d-lg-block col-lg-4">
+      <div class="contact__buttons my-2"></div>
+
+      <checkcars-offer-box
+        [vatRate]="vatRate"
+        (scrollToContact)="scrollToContactForm()"
+        [priceType]="priceType"
+        [vehicle]="vehicle"
+      ></checkcars-offer-box>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+.tile {
+  background-color: white;
+}
+.nav-icon {
+  position: absolute;
+  top: 50%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.rightRs {
+  @extend .nav-icon;
+  right: -8px;
+}
+.leftRs {
+  @extend .nav-icon;
+  left: -6px;
+}

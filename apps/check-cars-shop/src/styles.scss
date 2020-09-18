@@ -1,0 +1,252 @@
+@import 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap');
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  body {
+    font-family: 'Sen', sans-serif;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    //SCROLLBAR START
+    &::-webkit-scrollbar {
+      width: 13px;
+    }
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
+    }
+    //SCROLLBAR END
+  }
+}
+
+.slider__container .ngx-slider {
+  .ngx-slider-bar {
+    height: 8px !important;
+    border-radius: 4px;
+  }
+  .ngx-slider-selection {
+    background-color: $primary-color !important;
+  }
+  .ngx-slider-active {
+    &:after {
+      background-color: $primary-color !important;
+    }
+  }
+  .ngx-slider-pointer {
+    background-color: $primary-color !important;
+    width: 24px;
+    height: 24px;
+    top: -9px;
+    &:after {
+      top: 7px !important;
+      left: 7px !important;
+      width: 10px !important;
+      height: 10px !important;
+      border-radius: 7px !important;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      opacity: 0.3;
+      cursor: pointer;
+      width: 34px;
+      height: 34px;
+      top: -5px;
+      left: -5px;
+      background-color: #ff002e;
+      z-index: -1;
+      border-radius: 16px;
+    }
+  }
+}
+
+.btngroup__container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #eeeff2;
+  .btn-select {
+    max-width: 200px;
+    flex-basis: 47%;
+    line-height: 1.5;
+    background-color: #eeeff2;
+    &--active {
+      -webkit-box-shadow: 0px 2px 1px 0px rgba(2, 7, 36, 0.08);
+      -moz-box-shadow: 0px 2px 1px 0px rgba(2, 7, 36, 0.08);
+      box-shadow: 0px 2px 1px 0px rgba(2, 7, 36, 0.08);
+      color: white;
+      background-color: $primary-color;
+    }
+    &:hover {
+      -webkit-box-shadow: 0px 2px 1px 0px rgba(2, 7, 36, 0.08);
+      -moz-box-shadow: 0px 2px 1px 0px rgba(2, 7, 36, 0.08);
+      box-shadow: 0px 2px 1px 0px rgba(2, 7, 36, 0.08);
+      color: white;
+      background-color: $primary-color;
+
+      background-image: none;
+    }
+    &:focus {
+      color: white;
+      background-color: $primary-color;
+
+      background-image: none;
+    }
+  }
+}
+select {
+  position: relative;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: url('assets/images/arrow-down-s-line.png') no-repeat;
+  background-position: right 10px top 50%;
+}
+//Custom chk
+/* The chk-container */
+.chk-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.chk-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border: 1px solid #c6c8d2;
+  box-shadow: 0 0 1px #c6c8d2 inset;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+/* On mouse-over, add a grey background color */
+.chk-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.chk-container input:checked ~ .checkmark {
+  background-color: #ff002e;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.chk-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.chk-container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* The container */
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.radio-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: white;
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .radio-checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked ~ .radio-checkmark {
+  background-color: $primary-color;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radio-checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .radio-checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .radio-checkmark:after {
+  top: 4px;
+  left: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: white;
+}
+
+ngu-tile {
+  .tile {
+    box-shadow: none !important;
+  }
+}

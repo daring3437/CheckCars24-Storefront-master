@@ -1,0 +1,14 @@
+<input
+  type="checkbox"
+  id="toggle-button-checkbox"
+  [checked]="checked"
+  (change)="changed.emit($event.target.checked)"
+/>
+<label class="toggle-mask" for="toggle-button-checkbox"></label>
+
+<label class="toggle-button-switch"></label>
+
+<div class="toggle-button-text">
+  <div class="toggle-button-text-on"></div>
+  <div class="toggle-button-text-off"></div>
+</div>

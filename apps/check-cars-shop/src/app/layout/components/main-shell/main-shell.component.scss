@@ -1,0 +1,11 @@
+.router-wrapper {
+  min-height: calc(100vh - 276px);
+  background-color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  &-helper {
+    width: 100%;
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "title": "AR  Neuwagen günstig finanzieren",
+  "last_viewed": "AR Ihre zuletzt gesehenen Fahrzeuge",
+  "premium": "AR  Unsere Premium Auswahl",
+  "premium_selection": "AR  Unsere Premium Auswahl",
+  "features": {
+    "l_tested": "AR Nur geprüfte fahrzeuge",
+    "l_financing": "AR Attraktive Finanzierung",
+    "l_delivery": "AR Zulassung und Lieferung",
+    "l_guarantee": "AR 1 Jahr Garantie",
+    "l_refund": "AR 14 Tage Rückgaberecht"
+  },
+  "categories": {
+    "l_cabrio": "AR Cabrio",
+    "l_elektro": "AR Elektro",
+    "l_smallcar": "AR Kleinwagen",
+    "l_combi": "AR Kombi",
+    "l_compact": "AR Kompakt",
+    "l_limusine": "AR Limousine",
+    "l_suv": "AR Suv",
+    "l_van": "AR Van"
+  },
+  "car_brands": {
+    "our_brands": "AR  Unsere Marken"
+  },
+  "search_box": {
+    "pls_select": "AR  Please select",
+    "b_financing": "AR  Finanzierung",
+    "b_leasing": "AR  Leasing",
+    "search": "AR  Autos finden",
+    "l_more_filter": "AR  Mehr Filter?"
+  },
+  "delivery_info": {
+    "title": "AR  Lieferung an Ihre Haustür",
+    "text": "AR  Die Anschaffung eines Neuwagens ist eine große Investition, die vorher\n        gut überlegt sein sollte. Aus diesem Grund ist eine kompetente."
+  },
+  "services": {
+    "title": "AR  Gebrauchtwagen kaufen bei CheckCars24",
+    "subtitle_1": "AR  Bei CheckCars24 steht der Kunde im Mittelpunkt, wir legen großen Wert auf\n      Schnelligkeit, Flexibilität und eine interessante Preisgestaltung.",
+    "paragraph_1": "AR  CheckCars24.de gehört mit seinem großen",
+    "paragraph_link": "AR  Onlineangebot",
+    "paragraph_2": "AR  zu Deutschlands günstigsten Online-Autohäusern. Hier finden Sie immer das\n      passende Leasingangebot oder Finanzierungsangebot, das ganz auf Sie\n      zugeschnitten ist. Die große Auswahl an Neuwagen aus über 20 Topmarken,\n      die günstigen Preise und die schnellen Lieferzeiten machen CheckCars24.de\n      unschlagbar! Ob Sie ein Fahrzeug leasen, finanzieren oder bar kaufen\n      wollen, unsere Verkaufsberater finden für Sie das perfekte Angebot! Vom\n      Kleinwagen über SUV bis hin zu Transportern, unser breites Angebot an\n      Fahrzeugen lässt keine Wünsche offen.",
+    "subtitle_2": "AR  ertrauen wird bei CheckCars24 groß geschrieben",
+    "paragraph_3": "AR  Die Anschaffung eines Neuwagens ist eine große Investition, die vorher gut\n      überlegt sein sollte. Aus diesem Grund ist eine kompetente Beratung nicht\n      nur essentiell sondern bildet das Fundament des Vertrauens! CheckCars24\n      setzt hier auf hohe Transparenz in der Kommunikation."
+  }
+}

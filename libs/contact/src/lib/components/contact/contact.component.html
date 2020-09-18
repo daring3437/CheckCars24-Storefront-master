@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2>
+        DO YOU HAVE ANY QUESTIONS ABOUT OUR VEHICLE OFFERS?
+      </h2>
+      <p class="p1">
+        Then you are exactly right here! We're here to help!
+      </p>
+      <p>
+        WRITE US A MESSAGE:
+      </p>
+      <form [formGroup]="contactForm">
+        <div class="form-group">
+          <div class="form-control">
+            <label for="" class="d-block">{{
+              'contact.l_name' | translate
+            }}</label>
+            <input formControlName="Name" type="text" class="w-100" />
+          </div>
+          <div class="form-control">
+            <label for="" class="d-block">{{
+              'contact.l_email' | translate
+            }}</label>
+            <input formControlName="Email" type="email" class="w-100" />
+          </div>
+          <div class="form-control">
+            <label for="" class="d-block">{{
+              'contact.l_phone' | translate
+            }}</label>
+            <input formControlName="Phone" type="text" class="w-100" />
+          </div>
+          <div class="form-control">
+            <label for="" class="d-block">{{
+              'contact.l_subject' | translate
+            }}</label>
+            <input formControlName="Subject" class="w-100" type="text" />
+          </div>
+          <div class="form-control">
+            <label for="" class="d-block">{{
+              'contact.l_text' | translate
+            }}</label>
+            <textarea
+              formControlName="Text"
+              class="w-100 raised-b"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+          <label class="chk-container mt-3">
+            <span class="p3">
+              {{ 'contact.l_accept_terms' | translate }}
+              <a class="navigation-text" routerLink="/legal/privacy">
+                {{ 'contact.l_privacy_settings' | translate }}
+              </a>
+            </span>
+            <input
+              formControlName="TermsAccepted"
+              class="w-100"
+              type="checkbox"
+              checked="checked"
+            />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <button
+          [disabled]="contactForm.invalid"
+          (click)="submitContactForm()"
+          class="pure-button btn-primary"
+        >
+          {{ 'contact.b_send' | translate }}
+        </button>
+      </form>
+
+      <div *ngIf="response === 'success'" class="submitted-success">
+        <p>
+          {{ 'contact_form.l_submit_success' | translate }}
+        </p>
+      </div>
+
+      <div *ngIf="response === 'error'" class="submitted-error">
+        <p>
+          {{ 'contact_form.l_submit_fail' | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

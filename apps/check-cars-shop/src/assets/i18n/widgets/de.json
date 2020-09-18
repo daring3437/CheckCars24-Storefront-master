@@ -1,0 +1,29 @@
+{
+  "primary_header": {
+    "l_toggle_private": "Privat",
+    "l_toggle_business": "Business",
+    "l_favorite": "Favoriten",
+    "l_menu": "Menü",
+    "l_we_buy": "Wir kaufen Gebrauchtwagen Kontakt",
+    "l_home": "Home",
+    "l_vehicles": "Fahrzeuge",
+    "l_contact": "Kontakt",
+    "l_jobs": "Jobs"
+  },
+  "primary_footer": {
+    "l_copyright": "© 2020 CHECKCARS24. Alle Rechte vorbehalten.",
+    "l_our_partners": "Unsere Partner",
+    "l_data_protection": "Datenschutz",
+    "l_financing": "Finanzierung",
+    "l_imprint": "Impressum",
+    "l_contact": "Kontakt"
+  },
+  "product-card": {
+    "b_offer": "Zum Angebot",
+    "b_contact": "Jetzt anfragen",
+    "l_month": "Pro Monat",
+    "l_month_duration": "Monate Laufzeit",
+    "l_totalperkm": "100/km (komb.)",
+    "l_coperkm": "CO2/km (komb.)"
+  }
+}

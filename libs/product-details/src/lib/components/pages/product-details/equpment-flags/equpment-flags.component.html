@@ -1,0 +1,11 @@
+<ng-container *ngIf="vehicle?.Equipment.length === 0; else elseTemplate">
+</ng-container>
+<ng-template #elseTemplate>
+  <h2>{{ 'equipment_flags.l_vehicle_information' | translate }}</h2>
+  <p>{{ 'equipment_flags.l_furnishing' | translate }}:</p>
+  <ul class="equipment" *ngIf="vehicle?.Equipment">
+    <li *ngFor="let equipment of vehicle.Equipment" class="my-2 pr-4">
+      {{ equipment['Translations'][0]['Text'] }}
+    </li>
+  </ul>
+</ng-template>

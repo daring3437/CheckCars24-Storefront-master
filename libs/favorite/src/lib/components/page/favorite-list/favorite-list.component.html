@@ -1,0 +1,33 @@
+<section>
+  <ng-container *ngIf="dataStream$ | async as data; else loading">
+    {{ data[0].length }}
+    <ng-container *ngIf="objectKeys(data[0]).length > 0; else noFavourite">
+      <div class="container">
+        <h2>{{ 'favoritelist.l_favorite' | translate }}</h2>
+        <div class="row">
+          <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3"
+            *ngFor="let vehicle of data[0] | keyvalue; trackBy: trackByKey"
+          >
+            <checkcars-product-card
+              [favorites]="data[0]"
+              [priceType]="data[1]"
+              [product]="vehicle.value"
+            >
+            </checkcars-product-card>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+  <ng-template #noFavourite>
+    <div class="h-100 d-flex justify-content-center align-items-center">
+      <h2>{{ 'favoritelist.l_not_selected' | translate }}</h2>
+    </div>
+  </ng-template>
+  <ng-template #loading>
+    <div class="h-100 d-flex justify-content-center align-items-center">
+      <h2>loading...</h2>
+    </div>
+  </ng-template>
+</section>

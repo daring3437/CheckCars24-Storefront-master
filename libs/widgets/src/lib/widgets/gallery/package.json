@@ -1,0 +1,31 @@
+{
+  "name": "@kolkov/ngx-gallery",
+  "version": "1.2.0",
+  "description": "A simple responsive native gallery component for Angular 8+",
+  "homepage": "https://github.com/kolkov/ngx-gallery",
+  "author": {
+    "name": "Andrey Kolkov",
+    "url": "https://github.com/kolkov"
+  },
+  "repository": "https://github.com/kolkov/ngx-gallery",
+  "license": "MIT",
+  "private": false,
+  "bugs": {
+    "url": "https://github.com/kolkov/ngx-gallery/issues"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=8.0.0",
+    "@angular/core": ">=8.0.0",
+    "tslib": "^1.9.3"
+  },
+  "keywords": [
+    "angular",
+    "gallery",
+    "component",
+    "ngx-gallery",
+    "responsive gallery component",
+    "images",
+    "slider",
+    "carousel"
+  ]
+}

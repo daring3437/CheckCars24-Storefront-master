@@ -1,0 +1,17 @@
+{
+  "contact": {
+    "title": "G  DO YOU HAVE ANY QUESTIONS ABOUT OUR VEHICLE OFFERS?",
+    "subtitle_one": "G Then you are exactly right here! We're here to help!",
+    "subtitle_two": "G WRITE US A MESSAGE:",
+    "l_name": "G Name",
+    "l_email": "G Email",
+    "l_phone": "G Phone",
+    "l_subject": "G Subject",
+    "l_text": "G Text",
+    "l_accept_terms": "G I hereby accept the information I have given.",
+    "l_privacy_settings": "G Data protection",
+    "b_send": "G Send",
+    "l_submit_success": "Thank you for you interest. Your request have been sent! We will contact you as soon as possible.",
+    "l_submit_fail": "An error has occurred, please try again later, or call us!"
+  }
+}

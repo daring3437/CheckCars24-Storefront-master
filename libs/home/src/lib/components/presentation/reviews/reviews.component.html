@@ -1,0 +1,60 @@
+<ngu-carousel
+  #myCarousel
+  [inputs]="carouselTile"
+  [dataSource]="carouselTileItems"
+>
+  <ngu-tile *nguCarouselDef="let item; let i = index">
+    <div class="tile p-4" style="min-height: 200px;">
+      <p class="p2 text-secondary lh-32">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+        consequatur porro aperiam? Adipisci, optio quaerat?Lorem ipsum dolor sit
+        amet Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+        cupiditate iste aliquid accusantium? Laudantium, fuga.
+      </p>
+      <div class="d-flex justify-content-between align-items-end mt-3">
+        <div style="flex-basis: 20%;">
+          ******
+        </div>
+        <div>
+          <p class="p2">Jela und Fabijan Lukic</p>
+          <p class="p4 text-secondary">Kundin</p>
+        </div>
+        <div>
+          <!--    <img src="https://picsum.photos/50" alt="" /> -->
+        </div>
+      </div>
+    </div>
+  </ngu-tile>
+
+  <button
+    NguCarouselPrev
+    class="leftRs"
+    [style.opacity]="myCarousel.isFirst ? 0.5 : 1"
+  >
+    <svg-icon src="assets/icons/svg/arrow-left-long.svg"></svg-icon>
+  </button>
+  <button
+    NguCarouselNext
+    class="rightRs"
+    [style.opacity]="myCarousel.isLast ? 0.5 : 1"
+  >
+    <svg-icon src="assets/icons/svg/arrow-right-long.svg"></svg-icon>
+  </button>
+
+  <!--   <ul class="myPoint" NguCarouselPoint>
+    <li
+      *ngFor="let ia of myCarousel.pointNumbers; let i = index"
+      [class.active]="ia == myCarousel.activePoint"
+      (click)="myCarousel.moveTo(ia)"
+      [style.background]="'url(' + carouselTileItems[i] + ')'"
+    ></li>
+  </ul> -->
+</ngu-carousel>
+<div class="row">
+  <div *ngFor="let item of items" class="col">
+    <label
+      ><!-- <img src="https://picsum.photos/100/50" alt="" /> -->
+      <span>*****</span></label
+    >
+  </div>
+</div>

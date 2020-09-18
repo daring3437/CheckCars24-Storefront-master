@@ -1,0 +1,121 @@
+@import 'variables';
+header {
+  background-color: #484c5b;
+  height: 72px;
+  width: 100%;
+  .logo {
+    width: 132px;
+    height: auto;
+  }
+  .header__action {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 10px;
+    position: relative;
+    @media (max-width: 768px) {
+      position: unset;
+    }
+    .favorite-count {
+      font-size: 13px;
+      font-weight: 700;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: red;
+      padding: 1px 4px;
+      left: 14px;
+      top: -3px;
+    }
+    &-icon {
+      margin-right: 10px;
+      fill: white;
+    }
+    .menu {
+      display: none;
+      position: absolute;
+      top: 35px;
+      left: -65px;
+      width: 150px;
+      z-index: 100000;
+      ul {
+        background: white;
+        padding: 0;
+        margin: 0;
+        li {
+          cursor: pointer;
+          border-bottom: 1px solid #ddd;
+          padding: 10px 10px;
+          a {
+            color: #484c5b;
+          }
+          &:hover {
+            a {
+              color: white;
+            }
+            background-color: $primary-color;
+          }
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+        .toggle {
+          cursor: unset;
+          .switcher {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: baseline;
+            &-text {
+              margin: 5px 0;
+              color: #484c5b;
+            }
+            .toggle__wrap {
+              align-self: flex-end;
+              transform: rotate(90deg);
+              position: absolute;
+            }
+          }
+          &:hover {
+            color: #484c5b;
+            background-color: white;
+          }
+        }
+      }
+      @media (max-width: 768px) {
+        width: 100vw;
+        max-width: 100%;
+        left: 0;
+        top: 72px;
+      }
+    }
+  }
+  .switcher {
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .contact-phone {
+      display: none;
+    }
+    .switcher {
+      display: none;
+    }
+    .favourite {
+      display: none;
+    }
+  }
+
+  * {
+    color: white;
+  }
+  &-content {
+    max-width: 1224px;
+  }
+}
+.left-side {
+  @media (max-width: 768px) {
+    position: unset;
+  }
+}

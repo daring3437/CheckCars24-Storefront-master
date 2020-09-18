@@ -1,0 +1,299 @@
+<section class="raised-border" *ngIf="parameters">
+  <form [formGroup]="searchForm">
+    <checkcars-collapse-conatiner>
+      <ng-template #header>
+        <p class="cursor-pointer w-100">
+          {{ 'search_bar.l_manufacturer' | translate }}
+        </p>
+      </ng-template>
+      <ng-template #body>
+        <div class="ng-autocomplete w-100" *ngIf="parameters[0]">
+          <ng-autocomplete
+            #auto
+            [data]="parameters[0].Values"
+            [searchKeyword]="'value'"
+            (selected)="selectEvent($event, 'autocomplete')"
+            [itemTemplate]="itemTemplate"
+            [notFoundTemplate]="notFoundTemplate"
+          >
+          </ng-autocomplete>
+
+          <ng-template #itemTemplate let-item>
+            <div class="d-flex align-items-center ml-2">
+              <img class="mr-2 resp-img" [src]="item.icon" />
+              <a [innerHTML]="item.value"></a>
+            </div>
+          </ng-template>
+
+          <ng-template #notFoundTemplate let-notFound>
+            <div [innerHTML]="'not Found'"></div>
+          </ng-template>
+        </div>
+        <ul
+          *ngIf="selectedManufactures && selectedManufactures.length !== 0"
+          class="p-0"
+        >
+          <p class="p4">
+            {{ 'search_bar.l_selected' | translate }}
+          </p>
+          <li
+            class="my-2 position-relative d-flex align-items-center"
+            *ngFor="let manufacturer of selectedManufactures"
+          >
+            <img class="mr-2 resp-img" [src]="manufacturer.Icon" />
+            {{ manufacturer.Key }}
+            <svg-icon
+              [svgStyle]="{ 'width.px': 22, 'height.px': 22 }"
+              (click)="removeManufacturer(manufacturer.Key)"
+              src="assets/icons/svg/delete.svg"
+              class="remove-icon cursor-pointer"
+            ></svg-icon>
+          </li>
+        </ul>
+        <p class="p4">{{ 'search_bar.l_every_model' | translate }}</p>
+        <ul style="padding: 0;" *ngIf="parameters[0]">
+          <li
+            class="pointer d-flex align-items-center my-3"
+            (click)="selectEvent(p, null)"
+            *ngFor="let p of parameters[0].Values"
+          >
+            <img class="mr-2 resp-img" [src]="p.icon" [alt]="p.value" />
+            <span class="cursor-pointer">
+              {{ p.value }}
+            </span>
+          </li>
+        </ul>
+      </ng-template>
+    </checkcars-collapse-conatiner>
+
+    <checkcars-collapse-conatiner>
+      <ng-template #header>
+        <p class="cursor-pointer w-100">
+          {{ 'search_bar.l_modell' | translate }}
+        </p>
+      </ng-template>
+      <ng-template #body>
+        <ul style="padding: 0;" *ngIf="selectedManufactures">
+          <li class="pointer my-3" *ngFor="let mf of selectedManufactures">
+            <img class="mr-2 resp-img d-inline-block" [src]="mf.Icon" />
+            <p class="d-inline-block">
+              {{ mf.Key }}
+            </p>
+            <ul class="p-0">
+              <li class="my-2" *ngFor="let modell of mf.Values; let i = index">
+                <label class="chk-container">
+                  {{ modell.name }}
+                  <input
+                    type="checkbox"
+                    [ngModelOptions]="{ standalone: true }"
+                    [(ngModel)]="modell['selected']"
+                  />
+                  <span class="checkmark"></span>
+                </label>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </ng-template>
+    </checkcars-collapse-conatiner>
+    <checkcars-collapse-conatiner>
+      <ng-template #header>
+        <p class="cursor-pointer w-100">
+          {{ 'search_bar.l_bodytype_tag' | translate }}
+        </p>
+      </ng-template>
+      <ng-template #body>
+        <div
+          formArrayName="bodyTypeTag"
+          *ngFor="let bodyType of bodyTypeTagFormArray.controls; let i = index"
+        >
+          <label class="chk-container" [formGroup]="bodyType">
+            {{ bodyType.value.name }}
+            <input type="checkbox" formControlName="value" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </ng-template>
+    </checkcars-collapse-conatiner>
+    <checkcars-collapse-conatiner>
+      <ng-template #header>
+        <p class="cursor-pointer w-100">
+          {{ 'search_bar.l_engine' | translate }}
+        </p>
+      </ng-template>
+      <ng-template #body>
+        <div formGroupName="engine">
+          <input
+            class="w-100 raised-border"
+            type="number"
+            formControlName="enginePower"
+          />
+          <p *ngIf="">Horse power must be between 100 - 500</p>
+          <div class="d-flex mt-3">
+            <label class="radio-container position-relative mr-4">
+              <span class="p2 bold">
+                {{ 'search_bar.l_horse_power' | translate }}
+              </span>
+              <input
+                formControlName="enginePowerType"
+                value="ps"
+                type="radio"
+              />
+              <span class="radio-checkmark"></span>
+            </label>
+            <label class="radio-container position-relative">
+              <span class="p2 bold">
+                {{ 'search_bar.l_kilowatt' | translate }}
+              </span>
+              <input
+                value="kwh"
+                formControlName="enginePowerType"
+                type="radio"
+              />
+              <span class="radio-checkmark"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Radio button ps - kwh -->
+      </ng-template>
+    </checkcars-collapse-conatiner>
+    <checkcars-collapse-conatiner>
+      <ng-template #header>
+        <p class="cursor-pointer w-100">
+          {{ 'search_bar.l_price' | translate }}
+        </p>
+      </ng-template>
+      <ng-template #body>
+        <div class="btngroup__container my-2 p-1">
+          <button
+            [ngClass]="{
+              'btn-select--active': selectedType === 'Finanzierung'
+            }"
+            (click)="setType('Finanzierung')"
+            class="pure-button btn-select"
+          >
+            {{ 'search_bar.l_financing' | translate }}
+          </button>
+          <button
+            [ngClass]="{ 'btn-select--active': selectedType === 'Leasing' }"
+            (click)="setType('Leasing')"
+            class="pure-button btn-select"
+          >
+            {{ 'search_bar.l_leasing' | translate }}
+          </button>
+        </div>
+        <div class="slider__container">
+          <ng-container *ngIf="isBrowser">
+            <ngx-slider
+              class="checkcars-slider"
+              [(value)]="minValue"
+              [(highValue)]="maxValue"
+              [options]="options"
+            ></ngx-slider>
+          </ng-container>
+
+          <div class="d-flex justify-content-between mt-3">
+            <input
+              [ngModelOptions]="{ standalone: true }"
+              [(ngModel)]="minValue"
+              class="w-100"
+              type="number"
+            />
+            <span class="mx-2"> {{ 'search_bar.l_to' | translate }}</span>
+            <input
+              [ngModelOptions]="{ standalone: true }"
+              [(ngModel)]="maxValue"
+              class="w-100"
+              type="number"
+            />
+          </div>
+          <p>{{ 'search_bar.l_populat_prices' | translate }}</p>
+          <div
+            class="d-flex flex-wrap justify-content-between"
+            style="height: 100px;"
+          >
+            <div class="ck-button">
+              <label>
+                <input
+                  (click)="setPrice({ minValue: 0, maxValue: 200 })"
+                  [checked]="false"
+                  type="checkbox"
+                /><span>0 € - 200 €</span>
+              </label>
+            </div>
+            <div class="ck-button">
+              <label>
+                <input
+                  [checked]="false"
+                  type="checkbox"
+                  (click)="setPrice({ minValue: 200, maxValue: 300 })"
+                  [value]="false"
+                /><span>200 € - 300 €</span>
+              </label>
+            </div>
+            <div class="ck-button">
+              <label>
+                <input
+                  [checked]="false"
+                  type="checkbox"
+                  (click)="setPrice({ minValue: 300, maxValue: 400 })"
+                  [value]="false"
+                /><span>300 € - 400 €</span>
+              </label>
+            </div>
+            <div class="ck-button">
+              <label>
+                <input
+                  [checked]="false"
+                  type="checkbox"
+                  (click)="setPrice({ minValue: 400, maxValue: 500 })"
+                /><span>400 € - 500 €</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </checkcars-collapse-conatiner>
+
+    <div style="padding: 10px 20px;">
+      {{ 'search_bar.l_transmission_type' | translate }}
+    </div>
+    <div style="padding: 10px 20px; border-bottom: 1px solid #ddd;">
+      <div
+        formArrayName="transmissionType"
+        *ngFor="let ts of transmissionTypesFormArray.controls; let i = index"
+      >
+        <label class="chk-container" [formGroup]="ts">
+          {{ ts.value.name }}
+          <input type="checkbox" formControlName="value" />
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+
+    <div style="padding: 10px 20px;">
+      {{ 'search_bar.l_fueltype' | translate }}
+    </div>
+    <div
+      style="padding: 10px 20px; border-bottom: 1px solid #ddd;"
+      *ngIf="parameters[1]"
+    >
+      <div
+        formArrayName="fuelTypes"
+        *ngFor="let fuleType of fuelTypesFormArray.controls; let i = index"
+      >
+        <label class="chk-container" [formGroup]="fuleType">
+          {{ fuleType.value.name }}
+          <input type="checkbox" formControlName="value" />
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+    <div style="padding: 10px 20px;">
+      <button (click)="search()" class="pure-button btn-primary w-100">
+        {{ 'search_bar.b_search' | translate }}
+      </button>
+    </div>
+  </form>
+</section>

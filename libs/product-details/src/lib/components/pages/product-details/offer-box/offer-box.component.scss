@@ -1,0 +1,28 @@
+.offer__box {
+  position: sticky;
+  top: 220px;
+
+  .price {
+    font-size: 40px;
+    font-weight: 700;
+  }
+  &-separator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .spacer {
+      flex-basis: 40%;
+    }
+  }
+  .shipping-text {
+    background-color: #e1f2da;
+    border-radius: 4px;
+    padding: 0 15px;
+  }
+  @media (max-width: 991px) {
+    position: static;
+    .contact-btn {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.home__page {
+  margin: -15px -15px 0 -15px;
+}
+.home__icon {
+  color: white;
+}
+.car-img {
+  margin-top: 100px;
+}
+
+.feature {
+  padding: 0 45px;
+}
+@media (max-width: 576px) {
+  .feature {
+    display: flex;
+    &__icon {
+      margin-right: 15px;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+@import '_variables';
+
+//Theme
+.spacer {
+  margin: 10px 0;
+  border-bottom: 1px solid $border-color;
+}
+.raised-border {
+  border: 1px solid $border-color;
+  box-shadow: 0 0 1px $border-color inset;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.text-light {
+  color: $light-text;
+}
+.text-secoundary {
+  color: $text-color;
+}
+.text-primary {
+  color: $primary-color !important;
+}
+.bold {
+  font-weight: 700;
+}
+.lh-32 {
+  line-height: 32px;
+}
+.lh-40 {
+  line-height: 40px;
+}
+
+.btn-base {
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 12px 27px 12px 27px;
+}
+.navigation-text {
+  color: $primary-color;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.btn-primary {
+  @extend .btn-base;
+  background-color: $primary-color;
+  color: white;
+
+  &:hover,
+  :focus {
+    background-image: none;
+    background-color: darken($primary-color, $amount: 2);
+  }
+}
+.btn-primary-outline {
+  background-color: white;
+  color: $primary-color;
+  border: 1px solid $primary-color;
+  &:hover,
+  :focus {
+    background-image: none;
+    background-color: none;
+  }
+}
+
+.btn-secoundary {
+  @extend .btn-base;
+  background-color: $secoundary-color;
+  &:hover,
+  :focus {
+    background-image: none;
+    background-color: darken($secoundary-color, $amount: 2);
+  }
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 40px;
+}
+h2 {
+  font-weight: 700;
+  font-size: 32px;
+  @media (max-width: 768px) {
+    font-size: 26px;
+  }
+}
+h3 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+}
+
+.p1 {
+  font-size: 18px;
+}
+.p2 {
+  font-size: 16px;
+}
+.p3 {
+  font-size: 14px;
+}
+.p4 {
+  font-size: 12px;
+  line-height: 32px;
+}
+//Bootstrap set
+.container {
+  max-width: 1224px;
+}

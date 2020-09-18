@@ -1,0 +1,17 @@
+<div style="background-color: #f4f4f6;" class="p-5">
+  <h2>
+    {{ 'car_brands.our_brands' | translate }}
+  </h2>
+
+  <div class="row">
+    <div class="col" *ngFor="let item of items">
+      <article
+        class="brand mb-2 cursor-pointer"
+        (click)="searchManufacturer(item)"
+      >
+        <img class="brand-icon" [src]="item.icon" alt="" />
+        <label class="brand-label">{{ item.value }}</label>
+      </article>
+    </div>
+  </div>
+</div>

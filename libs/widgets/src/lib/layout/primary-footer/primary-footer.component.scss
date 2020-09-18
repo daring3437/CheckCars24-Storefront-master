@@ -1,0 +1,39 @@
+footer {
+  height: 204px;
+  background-color: #f4f4f6;
+  .logo {
+    width: 132px;
+    height: auto;
+  }
+  .icon__wrap {
+    position: relative;
+    margin: 5px 10px;
+    .social-icon {
+      height: 24px;
+      width: 24px;
+      margin: -7px;
+
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      padding: 4px 10px;
+    }
+    .ig-button {
+      position: absolute;
+      top: -3px;
+    }
+  }
+  @media (max-width: 576px) {
+    height: auto;
+  }
+}
+.language-selector {
+  padding-left: 5px;
+  background-color: white;
+  height: 30px;
+}
+.meta-info {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

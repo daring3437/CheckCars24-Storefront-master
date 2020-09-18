@@ -1,0 +1,59 @@
+@import 'variables';
+
+.deatils__header {
+  height: 250px;
+  margin: -15px -15px 20px -15px;
+  background-color: #eeeff2;
+  .vehicle {
+    display: flex;
+    align-items: center;
+    &__icon {
+      background-color: white;
+      border-radius: 4px;
+      padding: 15px;
+      img {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+      }
+    }
+    &__info {
+      h2 {
+        margin-top: 5px;
+        margin-bottom: 15px;
+      }
+      &-chip {
+        padding: 3px 8px;
+        background: white;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+    }
+  }
+  @media (max-width: 576px) {
+    padding: unset;
+    justify-content: center;
+  }
+}
+
+.phone-icon {
+  margin-right: 10px;
+  fill: $primary-color;
+}
+.btn-lg {
+  height: 54px;
+}
+::ng-deep ngx-gallery {
+  display: block;
+}
+.disclamer {
+  p {
+    line-height: 15px;
+    display: inline;
+  }
+  a {
+    text-decoration: underline;
+    line-height: 15px;
+  }
+}

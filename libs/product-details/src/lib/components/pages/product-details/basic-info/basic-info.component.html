@@ -1,0 +1,82 @@
+<h2>{{ 'basic_info.title_vehicle_details' | translate }}</h2>
+
+<div class="row">
+  <div class="col-sm-12 col-md-6">
+    <div class="d-flex justify-content-between info-conatiner">
+      <p class="p2 bold">{{ 'basic_info.l_kind' | translate }}</p>
+      <p class="p2">{{ 'basic_info.l_new' | translate }}</p>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <div class="d-flex justify-content-between info-conatiner">
+      <p class="p2 bold">{{ 'basic_info.l_exterior_color' | translate }}</p>
+      <p class="p2">{{ vehicle?.ExteriorColorText }}</p>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <div class="d-flex justify-content-between info-conatiner">
+      <p class="p2 bold">{{ 'basic_info.l_manufacturer' | translate }}</p>
+      <p class="p2">{{ vehicle?.ManufacturerName }}</p>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <div class="d-flex justify-content-between info-conatiner">
+      <p class="p2 bold">{{ 'basic_info.l_bodytypetag' | translate }}</p>
+      <p class="p2">{{ vehicle?.BodyTypeTag }}</p>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <div class="d-flex justify-content-between info-conatiner">
+      <p class="p2 bold">{{ 'basic_info.l_model' | translate }}</p>
+      <p class="p2">{{ vehicle?.Model }}</p>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <div class="d-flex justify-content-between info-conatiner">
+      <p class="p2 bold">{{ 'basic_info.l_transmission_type' | translate }}</p>
+      <p class="p2">{{ vehicle?.TransmissionType }}</p>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <div class="d-flex justify-content-between info-conatiner">
+      <p class="p2 bold">{{ 'basic_info.l_modal_year' | translate }}</p>
+      <p class="p2">{{ vehicle?.ModelYear }}</p>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <div class="d-flex justify-content-between info-conatiner">
+      <p class="p2 bold">{{ 'basic_info.l_door_count' | translate }}</p>
+      <p class="p2">{{ vehicle?.DoorCount }}</p>
+    </div>
+  </div>
+
+  <div class="col-sm-12 col-md-6">
+    <div class="d-flex justify-content-between info-conatiner">
+      <p class="p2 bold">
+        {{ 'basic_info.l_engine_displacement' | translate }}
+      </p>
+      <p class="p2">{{ vehicle?.EngineDisplacement }} ccm</p>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <div class="d-flex justify-content-between info-conatiner">
+      <p class="p2 bold">{{ 'basic_info.l_fueltype' | translate }}</p>
+      <p class="p2">
+        <span *ngFor="let fuelType of vehicle?.FuelTypes">{{
+          fuelType.Name
+        }}</span>
+      </p>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <div class="d-flex justify-content-between info-conatiner">
+      <p class="p2 bold">{{ 'basic_info.l_engine_power' | translate }}</p>
+      <p class="p2">
+        {{ (vehicle?.EnginePowerKw)[0] }}
+        {{ 'basic_info.l_kilowatt' | translate }}
+        {{ (vehicle?.EnginePowerPs)[0] }}
+        {{ 'basic_info.l_horese_power' | translate }}
+      </p>
+    </div>
+  </div>
+</div>

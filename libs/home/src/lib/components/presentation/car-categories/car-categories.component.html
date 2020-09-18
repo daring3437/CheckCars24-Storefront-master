@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div
+      class="col-6 col-sm text-center p-2"
+      *ngFor="let category of categories"
+    >
+      <a href="javascript:void(0)" (click)="searchForCategory(category)">
+        <svg-icon
+          [src]="'assets/icons/svg/cat-' + category.src + '.svg'"
+          class="header__action-icon cursor-pointer"
+        ></svg-icon>
+        <p class="icon-text text-center text-primary bold p3">
+          {{ category.name }}
+        </p>
+      </a>
+    </div>
+  </div>
+</div>

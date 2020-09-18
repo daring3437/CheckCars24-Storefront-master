@@ -1,0 +1,77 @@
+@import 'variables';
+.raised-b {
+  border: 1px solid $border-color;
+  box-shadow: 0 0 1px $border-color inset;
+  box-sizing: border-box;
+}
+
+form {
+  .radio__wrap {
+    margin: 5px 0;
+    flex-basis: calc(50% - 20px);
+    display: flex;
+    align-items: center;
+    padding: 20px 15px;
+    background-color: white;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    height: 80px;
+    &:first-child {
+      margin-right: 10px;
+    }
+    &:last-child {
+      margin-left: 10px;
+    }
+    @media screen and(max-width:768px) {
+      flex-basis: 100%;
+      margin: 5px 0 !important;
+    }
+    .radio-container {
+      margin: 0;
+    }
+  }
+  .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    input[type*='text'] {
+      @extend .raised-b;
+      height: 40px;
+    }
+    input[type*='email'] {
+      @extend .raised-b;
+      height: 40px;
+    }
+    .form-control {
+      margin: 5px 0px;
+      flex-basis: calc(50% - 20px);
+      &:first-child {
+        margin-right: 10px;
+      }
+      &:nth-child(2) {
+        margin-left: 10px;
+      }
+      @media screen and(max-width:768px) {
+        flex-basis: 100%;
+        margin: 5px 0 !important;
+      }
+      .time-select {
+        width: 100%;
+        background-color: white;
+        height: 40px;
+        padding-left: 5px;
+      }
+    }
+  }
+}
+.submitted {
+  background-color: #e1f2da;
+  border-radius: 4px;
+  padding: 15px;
+}
+.submitted-error {
+  margin-top: 15px;
+  background-color: #f75e5e;
+  border-radius: 4px;
+  padding: 15px;
+}

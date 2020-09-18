@@ -1,0 +1,15 @@
+.text__card {
+    height: 100%;
+    background-color: #484c5b;
+}
+
+.info-text {
+    color: rgba(255, 255, 255, 0.64);
+    line-height: 32px;
+    ;
+}
+
+.title-text {
+    color: white;
+    line-height: 40px;
+}

@@ -1,0 +1,33 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@checkcars/widgets": ["libs/widgets/src/index.ts"],
+      "@checkcars/shared": ["libs/shared/src/index.ts"],
+      "@checkcars/home": ["libs/home/src/index.ts"],
+      "@checkcars/environment/*": ["apps/check-cars-shop/src/environments/*"],
+      "@checkcars/search": ["libs/search/src/index.ts"],
+      "@checkcars/product-details": ["libs/product-details/src/index.ts"],
+      "@checkcars/favorite": ["libs/favorite/src/index.ts"],
+      "@checkcars/ngrx-router": ["libs/ngrx-router/src/index.ts"],
+      "@checkcars/legal": ["libs/legal/src/index.ts"],
+      "@checkcars/contact": ["libs/contact/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

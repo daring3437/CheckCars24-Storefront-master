@@ -1,0 +1,134 @@
+<header>
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-6 d-flex align-items-center">
+        <img
+          routerLink="/home"
+          class="mr-4 logo cursor-pointer"
+          src="/assets/images/check-logo.png"
+        />
+
+        <!-- <div class="header__action contact-phone">
+          <svg-icon
+            src="assets/icons/svg/phone.svg"
+            class="header__action-icon cursor-pointer"
+          ></svg-icon>
+          <a href="tel:03328-33-17-277">03328 / 33 17 277</a>
+        </div> -->
+      </div>
+      <div class="col-6 d-flex justify-content-end left-side">
+        <div class="switcher">
+          <span class="mr-2">
+            {{ 'primary_header.l_toggle_private' | translate }}
+          </span>
+          <span>
+            <checkcars-toggle
+              [checked]="checked"
+              (changed)="toggleChanged($event)"
+            ></checkcars-toggle>
+          </span>
+          <span class="ml-2">
+            {{ 'primary_header.l_toggle_business' | translate }}
+          </span>
+        </div>
+        <div class="header__action favourite">
+          <a class="d-flex align-items-center" [routerLink]="['/favorites']">
+            <svg-icon
+              src="assets/icons/svg/heart.svg"
+              class="header__action-icon cursor-pointer"
+            ></svg-icon>
+            <span class="favorite-count" *ngIf="favouriteCount > 0">{{
+              favouriteCount
+            }}</span>
+            <span>
+              {{ 'primary_header.l_favorite' | translate }}
+            </span>
+          </a>
+        </div>
+        <div class="header__action">
+          <div
+            class="d-flex align-items-center cursor-pointer"
+            (click)="openMenu()"
+          >
+            <ng-container *ngIf="!open; else closeIcon">
+              <svg-icon
+                [svgStyle]="{
+                  'width.px': 24,
+                  'height.px': 24
+                }"
+                src="assets/icons/svg/menu.svg"
+                class="header__action-icon"
+              ></svg-icon>
+            </ng-container>
+            <ng-template #closeIcon>
+              <svg-icon
+                [svgStyle]="{
+                  'width.px': 24,
+                  'height.px': 24
+                }"
+                src="assets/icons/svg/delete.svg"
+                class="header__action-icon"
+              ></svg-icon>
+            </ng-template>
+
+            <span class="d-none d-md-block">
+              {{ 'primary_header.l_menu' | translate }}
+            </span>
+          </div>
+          <nav class="menu raised-border" [ngClass]="{ 'd-block': open }">
+            <ul>
+              <li (click)="naviagateTo('/home')">
+                <a href="javascript:void(0)">
+                  {{ 'primary_header.l_home' | translate }}
+                </a>
+              </li>
+
+              <li (click)="naviagateTo('/search')">
+                <a href="javascript:void(0)">
+                  {{ 'primary_header.l_vehicles' | translate }}
+                </a>
+              </li>
+
+              <li (click)="naviagateTo('/not found')">
+                <a href="javascript:void(0)">
+                  {{ 'primary_header.l_we_buy' | translate }}
+                </a>
+              </li>
+              <li (click)="naviagateTo('/contact')">
+                <a href="javascript:void(0)">
+                  {{ 'primary_header.l_contact' | translate }}
+                </a>
+              </li>
+              <li class="d-block d-md-none" (click)="naviagateTo('/favorites')">
+                <a href="javascript:void(0)">
+                  {{ 'primary_header.l_favorite' | translate }}
+                </a>
+              </li>
+              <li class="toggle d-block d-md-none">
+                <div class="switcher">
+                  <span class="switcher-text">
+                    {{ 'primary_header.l_toggle_private' | translate }}
+                  </span>
+                  <span class="toggle__wrap">
+                    <checkcars-toggle
+                      [checked]="checked"
+                      (changed)="toggleChanged($event)"
+                    ></checkcars-toggle>
+                  </span>
+                  <span class="switcher-text">
+                    {{ 'primary_header.l_toggle_business' | translate }}
+                  </span>
+                </div>
+              </li>
+              <li (click)="naviagateTo('/jobs')">
+                <a href="javascript:void(0)">
+                  {{ 'primary_header.l_jobs' | translate }}
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

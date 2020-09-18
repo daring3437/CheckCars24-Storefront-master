@@ -1,0 +1,24 @@
+{
+  "primary_header": {
+    "l_toggle_private": "E Private",
+    "l_toggle_business": "E Business",
+    "l_favourite": "E Favourite",
+    "l_menu": "E Menu"
+  },
+  "primary_footer": {
+    "l_copyright": "E © 2020 CHECKCARS24. Alle Rechte vorbehalten.",
+    "l_our_partners": "E Our Partners",
+    "l_data_protection": "E Data protection",
+    "l_financing": "E Finanzierung",
+    "l_imprint": "E Imprint",
+    "l_contact": "E Contact"
+  },
+  "product-card": {
+    "b_offer": "E Zum Angebot",
+    "b_contact": "E Jetzt anfragen",
+    "l_month": "E Pro Monat",
+    "l_month_duration": "E Monate Laufzeit",
+    "l_totalperkm": "E 100/km (komb.)",
+    "l_coperkm": "E CO2/km (komb.)"
+  }
+}

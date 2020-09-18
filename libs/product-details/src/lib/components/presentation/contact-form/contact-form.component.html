@@ -1,0 +1,106 @@
+<ng-container *ngIf="notSubmitted; else formSubmitted">
+  <form [formGroup]="contactForm">
+    <div class="d-flex flex-wrap justify-content-between mb-3">
+      <div class="radio__wrap raised-border">
+        <label class="radio-container position-relative">
+          <span class="p2 bold">
+            {{ 'contact_form.l_financial' | translate }}
+          </span>
+          <input
+            value="Credit"
+            formControlName="Type"
+            type="radio"
+            checked="checked"
+            name="Type"
+          />
+          <span class="radio-checkmark"></span>
+        </label>
+      </div>
+      <div class="radio__wrap raised-border">
+        <label class="radio-container position-relative">
+          <span class="p2 bold">
+            {{ 'contact_form.l_leasing' | translate }}
+          </span>
+          <input
+            value="Leasing"
+            formControlName="Type"
+            type="radio"
+            name="Type"
+          />
+          <span class="radio-checkmark"></span>
+        </label>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-control">
+        <label for="" class="d-block">{{
+          'contact_form.l_name' | translate
+        }}</label>
+        <input formControlName="Name" type="text" class="w-100" />
+      </div>
+      <div class="form-control">
+        <label for="" class="d-block">{{
+          'contact_form.l_phone' | translate
+        }}</label>
+        <input formControlName="Phone" type="text" class="w-100" />
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-control">
+        <label for="" class="d-block">{{
+          'contact_form.l_email' | translate
+        }}</label>
+        <input formControlName="Email" type="email" class="w-100" />
+      </div>
+      <div class="form-control">
+        <label for="" class="d-block">{{
+          'contact_form.l_postal_code' | translate
+        }}</label>
+        <input formControlName="City" class="w-100" type="text" />
+      </div>
+      <div class="form-control">
+        <label for="" class="d-block">
+          {{ 'contact_form.l_calling_time' | translate }}</label
+        >
+        <select formControlName="CallTime" class="time-select raised-border">
+          <option disabled selected value="null">
+            {{ 'contact_form.l_please_select' | translate }}</option
+          >
+          <option [value]="ct" *ngFor="let ct of callingTimes">{{ ct }}</option>
+        </select>
+      </div>
+      <label class="chk-container mt-3">
+        <span class="p3">
+          {{ 'contact_form.l_accept_terms' | translate }}
+        </span>
+        <input
+          formControlName="TermsAccepted"
+          class="w-100"
+          type="checkbox"
+          checked="checked"
+        />
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <button
+      [disabled]="contactForm.invalid"
+      (click)="submitContatctForm()"
+      class="pure-button btn-primary"
+    >
+      {{ 'contact_form.l_inquery' | translate }}
+    </button>
+  </form>
+</ng-container>
+
+<ng-template #formSubmitted>
+  <div class="submitted">
+    <p>
+      {{ 'contact_form.l_submit_success' | translate }}
+    </p>
+  </div>
+</ng-template>
+<div *ngIf="hasError" class="submitted-error">
+  <p>
+    {{ 'contact_form.l_submit_fail' | translate }}
+  </p>
+</div>
