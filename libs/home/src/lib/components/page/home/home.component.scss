@@ -11,6 +11,16 @@
 .feature {
   padding: 0 45px;
 }
+.featuresSec{
+  .custom-row{
+    .column1{padding-right: 0;}
+    .column2{padding-left: 0;}
+  }
+  .content{
+    padding: 30px;
+    background: #484c5b;
+  }
+}
 @media (max-width: 576px) {
   .feature {
     display: flex;
