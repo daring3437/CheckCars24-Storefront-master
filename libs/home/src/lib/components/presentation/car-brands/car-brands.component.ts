@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ParameterService, LocalStorageService } from '@checkcars/shared';
 import { Router } from '@angular/router';
+import { NguCarouselConfig } from '@ngu/carousel';
 interface ManufacturerParameter {
   Key: string;
   Values: Array<{ value: string; icon: string }>;
@@ -11,7 +12,22 @@ interface ManufacturerParameter {
   styleUrls: ['./car-brands.component.scss'],
 })
 export class CarBrandsComponent implements OnInit {
-  items: Array<{ value: string; icon: string }>;
+  items: Array<{ value: string; icon: string }> = [];
+
+  public carouselTile: NguCarouselConfig = {
+    grid: { xs: 1, sm: 2, md: 9, lg: 9, all: 0 },
+    slide: 9,
+    speed: 250,
+    point: {
+      visible: true,
+    },
+    load: 9,
+    velocity: 0,
+    touch: true,
+    easing: 'cubic-bezier(0, 0, 0.2, 1)',
+  };
+
+  carouselTileLoad(e) {}
 
   constructor(
     private parameterService: ParameterService,

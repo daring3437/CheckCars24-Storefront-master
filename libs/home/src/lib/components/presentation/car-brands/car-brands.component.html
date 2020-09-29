@@ -1,4 +1,4 @@
-<div style="background-color: #f4f4f6;" class="p-5">
+<!--<div style="background-color: #f4f4f6;" class="p-5">
   <h2>
     {{ 'car_brands.our_brands' | translate }}
   </h2>
@@ -14,4 +14,58 @@
       </article>
     </div>
   </div>
+</div>-->
+
+<div style="background-color: #f4f4f6;" class="p-5">
+<ngu-carousel
+  #myCarousel
+  [inputs]="carouselTile"
+  (carouselLoad)="carouselTileLoad($event)"
+  [dataSource]="items"
+>
+  <ngu-tile *nguCarouselDef="let item; let i = index">
+    <article
+        class="brand mb-2 cursor-pointer"
+        (click)="searchManufacturer(item)"
+      >
+        <img class="brand-icon" [src]="item.icon" alt="" />
+        <label class="brand-label">{{ item.value }}</label>
+      </article>
+  </ngu-tile>
+
+  <button
+    NguCarouselPrev
+    class="leftRs"
+    [style.opacity]="myCarousel.isFirst ? 0.5 : 1"
+    style="position: absolute;
+    top: 50%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;"
+  >
+    <svg-icon src="assets/icons/svg/arrow-left-long.svg"></svg-icon>
+  </button>
+
+  <button
+    NguCarouselNext
+    class="rightRs"
+    [style.opacity]="myCarousel.isLast ? 0.5 : 1"
+    style="position: absolute;
+    top: 50%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    right: 0;"
+  >
+    <svg-icon src="assets/icons/svg/arrow-right-long.svg"></svg-icon>
+  </button>
+
+  <ul class="myPoint" NguCarouselPoint>
+    <li
+      *ngFor="let ia of myCarousel.pointNumbers; let i = index"
+      [class.active]="ia == myCarousel.activePoint"
+      (click)="myCarousel.moveTo(ia)"
+    ></li>
+  </ul>
+</ngu-carousel>
 </div>
